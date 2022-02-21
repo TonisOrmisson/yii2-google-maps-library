@@ -26,9 +26,9 @@
     ],
     "require": {
         "ext-json": "*",
+        "ext-SimpleXML": "*",
         "yiisoft/yii2": ">=2.0.13",
-        "guzzlehttp/guzzle": "6.*",
-        "ext-SimpleXML": "^7.2"
+        "guzzlehttp/guzzle": "^7.0"
     },
     "autoload": {
         "psr-4": {
