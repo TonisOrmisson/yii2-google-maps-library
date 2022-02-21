@@ -30,10 +30,6 @@
         "guzzlehttp/guzzle": "6.*",
         "ext-SimpleXML": "^7.2"
     },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.10@dev",
-        "roave/security-advisories": "dev-master"
-    },
     "autoload": {
         "psr-4": {
             "dosamigos\\google\\maps\\": ""
