@@ -28,7 +28,7 @@
         "ext-json": "*",
         "ext-SimpleXML": "*",
         "yiisoft/yii2": ">=2.0.13",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7"
     },
     "autoload": {
         "psr-4": {

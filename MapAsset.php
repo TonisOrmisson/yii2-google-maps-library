@@ -2,7 +2,7 @@
 
 /*
  *
- * @copyright Copyright (c) 2013-2019 2amigos 
+ * @copyright Copyright (c) 2013-2019 2amigos
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  *
@@ -55,23 +55,26 @@ class MapAsset extends AssetBundle
      */
     public function init()
     {
+        $params = Yii::$app->params;
         // BACKWARD COMPATIBILITY
         // To configure please, add `googleMapsApiKey` parameter to your application configuration
         // file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
-        $key = @Yii::$app->params['googleMapsApiKey'];
+        $key = $params['googleMapsApiKey'];
         // To configure please, add `googleMapsLibraries` parameter to your application configuration.
         // For example "geometry,places"
-        $libraries = @Yii::$app->params['googleMapsLibraries'];
+        $libraries = isset($params['googleMapsLibraries']) ? $params['googleMapsLibraries'] : "";
         // To configure please, add `googleMapsLanguage` parameter to your application configuration
-        $language = @Yii::$app->params['googleMapsLanguage'];
+        $language = isset($params['googleMapsLanguage']) ? $params['googleMapsLanguage'] : "";
+        $callBack = isset($params['googleMapsCallback']) ? $params['googleMapsCallback'] : "initMaps";
 
         $this->options = array_merge($this->options, array_filter([
             'key' => $key,
             'libraries' => $libraries,
             'language' => $language,
+            'callBack' => $callBack
         ]));
         // BACKWARD COMPATIBILITY
 
-        $this->js[] = '//maps.googleapis.com/maps/api/js?' . http_build_query($this->options);
+        $this->js[] = 'https://maps.googleapis.com/maps/api/js?' . http_build_query($this->options);
     }
 }
