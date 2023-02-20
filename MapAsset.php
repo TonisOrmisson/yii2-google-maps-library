@@ -59,7 +59,7 @@ class MapAsset extends AssetBundle
         // BACKWARD COMPATIBILITY
         // To configure please, add `googleMapsApiKey` parameter to your application configuration
         // file with the value of your API key. To get yours, please visit https://code.google.com/apis/console/.
-        $key = $params['googleMapsApiKey'];
+        $key = isset($params['googleMapsApiKey']) ? $params['googleMapsApiKey'] : "";;
         // To configure please, add `googleMapsLibraries` parameter to your application configuration.
         // For example "geometry,places"
         $libraries = isset($params['googleMapsLibraries']) ? $params['googleMapsLibraries'] : "";
